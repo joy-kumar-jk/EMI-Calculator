@@ -1,0 +1,43 @@
+export default function SliderInput({ label, value, min, max, step, unit, onChange, formatDisplay }) {
+  const displayValue = formatDisplay ? formatDisplay(value) : value;
+  const percent = ((value - min) / (max - min)) * 100;
+
+  return (
+    <div className="space-y-2">
+      <div className="flex justify-between items-center">
+        <label className="text-sm font-medium text-gray-700">{label}</label>
+        <div className="flex items-center gap-1">
+          <input
+            type="number"
+            value={value}
+            min={min}
+            max={max}
+            step={step}
+            onChange={(e) => {
+              const v = parseFloat(e.target.value);
+              if (!isNaN(v) && v >= min && v <= max) onChange(v);
+            }}
+            className="w-28 text-right text-sm font-semibold text-gray-900 border border-gray-200 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {unit && <span className="text-xs text-gray-500">{unit}</span>}
+        </div>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(parseFloat(e.target.value))}
+        className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-blue-600"
+        style={{
+          background: `linear-gradient(to right, #2563eb ${percent}%, #e5e7eb ${percent}%)`,
+        }}
+      />
+      <div className="flex justify-between text-xs text-gray-400">
+        <span>{formatDisplay ? formatDisplay(min) : min}</span>
+        <span>{formatDisplay ? formatDisplay(max) : max}</span>
+      </div>
+    </div>
+  );
+}

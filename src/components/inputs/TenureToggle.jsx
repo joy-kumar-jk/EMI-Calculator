@@ -7,7 +7,7 @@ export default function TenureToggle({ value, onChange }) {
           onClick={() => onChange(unit)}
           className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all ${
             value === unit
-              ? 'bg-white text-blue-600 shadow-sm'
+              ? 'bg-white text-purple-600 shadow-sm'
               : 'text-gray-500 hover:text-gray-700'
           }`}
         >

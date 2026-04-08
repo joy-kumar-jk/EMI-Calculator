@@ -1,7 +1,7 @@
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { formatCurrency } from '../../utils/formatters';
 
-const COLORS = ['#2563eb', '#f59e0b'];
+const COLORS = ['#7c3aed', '#f59e0b'];
 
 export default function BreakdownPieChart({ principal, totalInterest }) {
   const data = [

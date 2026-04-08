@@ -27,7 +27,7 @@ export default function PrepaymentPanel({
             <select
               value={prepaymentMode}
               onChange={(e) => setPrepaymentMode(e.target.value)}
-              className="border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
             >
               <option value="reduce-tenure">Reduce Tenure</option>
               <option value="reduce-emi">Reduce EMI</option>
@@ -41,13 +41,13 @@ export default function PrepaymentPanel({
               {prepayments.map((pp) => (
                 <span
                   key={pp.id}
-                  className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm"
+                  className="inline-flex items-center gap-1.5 bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm"
                 >
                   {pp.type === 'recurring' ? 'Recurring' : 'One-time'}: {formatCurrency(pp.amount)} @ month {pp.startMonth}
                   {pp.frequency ? ` (every ${pp.frequency}mo)` : ''}
                   <button
                     onClick={() => removePrepayment(pp.id)}
-                    className="text-blue-400 hover:text-red-500 font-bold"
+                    className="text-purple-400 hover:text-red-500 font-bold"
                   >
                     x
                   </button>

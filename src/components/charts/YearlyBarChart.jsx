@@ -13,7 +13,7 @@ export default function YearlyBarChart({ yearlyData }) {
           <YAxis tickFormatter={(v) => `${(v / 1000).toFixed(0)}k`} width={50} />
           <Tooltip formatter={(value) => formatCurrency(value)} />
           <Legend />
-          <Bar dataKey="principal" name="Principal" fill="#2563eb" stackId="a" radius={[0, 0, 0, 0]} />
+          <Bar dataKey="principal" name="Principal" fill="#7c3aed" stackId="a" radius={[0, 0, 0, 0]} />
           <Bar dataKey="interest" name="Interest" fill="#f59e0b" stackId="a" radius={[4, 4, 0, 0]} />
         </BarChart>
       </ResponsiveContainer>

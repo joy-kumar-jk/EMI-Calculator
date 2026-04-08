@@ -30,7 +30,7 @@ export default function PrepaymentForm({ onAdd, maxMonth }) {
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
           >
             <option value="one-time">One-time</option>
             <option value="recurring">Recurring</option>
@@ -44,7 +44,7 @@ export default function PrepaymentForm({ onAdd, maxMonth }) {
             onChange={(e) => setAmount(e.target.value)}
             placeholder="e.g. 50000"
             min="1"
-            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
         <div>
@@ -56,7 +56,7 @@ export default function PrepaymentForm({ onAdd, maxMonth }) {
             placeholder="e.g. 6"
             min="1"
             max={maxMonth}
-            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
         </div>
         {type === 'recurring' && (
@@ -67,14 +67,14 @@ export default function PrepaymentForm({ onAdd, maxMonth }) {
               value={frequency}
               onChange={(e) => setFrequency(parseInt(e.target.value) || 1)}
               min="1"
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           </div>
         )}
       </div>
       <button
         type="submit"
-        className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+        className="px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded-lg hover:bg-purple-700 transition-colors"
       >
         Add Prepayment
       </button>

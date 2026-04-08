@@ -17,7 +17,7 @@ export default function SliderInput({ label, value, min, max, step, unit, onChan
               const v = parseFloat(e.target.value);
               if (!isNaN(v) && v >= min && v <= max) onChange(v);
             }}
-            className="w-28 text-right text-sm font-semibold text-gray-900 border border-gray-200 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-28 text-right text-sm font-semibold text-gray-900 border border-gray-200 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
           {unit && <span className="text-xs text-gray-500">{unit}</span>}
         </div>
@@ -29,9 +29,9 @@ export default function SliderInput({ label, value, min, max, step, unit, onChan
         step={step}
         value={value}
         onChange={(e) => onChange(parseFloat(e.target.value))}
-        className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-blue-600"
+        className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-purple-600"
         style={{
-          background: `linear-gradient(to right, #2563eb ${percent}%, #e5e7eb ${percent}%)`,
+          background: `linear-gradient(to right, #7c3aed ${percent}%, #e5e7eb ${percent}%)`,
         }}
       />
       <div className="flex justify-between text-xs text-gray-400">

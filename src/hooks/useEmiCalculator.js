@@ -9,6 +9,7 @@ export function useEmiCalculator() {
   const [tenureUnit, setTenureUnit] = useState('months');
   const [prepayments, setPrepayments] = useState([]);
   const [prepaymentMode, setPrepaymentMode] = useState('reduce-tenure');
+  const [selectedBank, setSelectedBank] = useState(null);
 
   const emi = useMemo(
     () => calculateEMI(loanAmount, annualRate, tenure),
@@ -49,6 +50,7 @@ export function useEmiCalculator() {
     annualRate, setAnnualRate,
     tenure, setTenure,
     tenureUnit, setTenureUnit,
+    selectedBank, setSelectedBank,
     prepayments, prepaymentMode, setPrepaymentMode,
     addPrepayment, removePrepayment,
     emi, summary, schedule, yearlyData, prepaymentResult,

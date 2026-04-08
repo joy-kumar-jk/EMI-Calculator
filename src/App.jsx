@@ -14,6 +14,7 @@ function App() {
     annualRate, setAnnualRate,
     tenure, setTenure,
     tenureUnit, setTenureUnit,
+    selectedBank, setSelectedBank,
     prepayments, prepaymentMode, setPrepaymentMode,
     addPrepayment, removePrepayment,
     emi, summary, schedule, yearlyData, prepaymentResult,
@@ -29,6 +30,7 @@ function App() {
             annualRate={annualRate} setAnnualRate={setAnnualRate}
             tenure={tenure} setTenure={setTenure}
             tenureUnit={tenureUnit} setTenureUnit={setTenureUnit}
+            selectedBank={selectedBank} setSelectedBank={setSelectedBank}
           />
           <EmiSummaryCard
             emi={emi}

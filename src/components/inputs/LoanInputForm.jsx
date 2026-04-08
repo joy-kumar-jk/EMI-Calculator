@@ -1,5 +1,6 @@
 import SliderInput from './SliderInput';
 import TenureToggle from './TenureToggle';
+import BankSelector from './BankSelector';
 import { LOAN_AMOUNT, ANNUAL_RATE, TENURE_MONTHS, TENURE_YEARS } from '../../constants';
 import { formatCurrency } from '../../utils/formatters';
 
@@ -8,6 +9,7 @@ export default function LoanInputForm({
   annualRate, setAnnualRate,
   tenure, setTenure,
   tenureUnit, setTenureUnit,
+  selectedBank, setSelectedBank,
 }) {
   const isYears = tenureUnit === 'years';
   const tenureDisplay = isYears ? Math.round(tenure / 12) : tenure;
@@ -39,6 +41,14 @@ export default function LoanInputForm({
         formatDisplay={(v) => formatCurrency(v)}
       />
 
+      <BankSelector
+        selectedBank={selectedBank}
+        onSelect={(bank) => {
+          setSelectedBank(bank);
+          if (bank) setAnnualRate(bank.rate);
+        }}
+      />
+
       <SliderInput
         label="Annual Interest Rate"
         value={annualRate}
@@ -46,7 +56,10 @@ export default function LoanInputForm({
         max={ANNUAL_RATE.max}
         step={ANNUAL_RATE.step}
         unit="%"
-        onChange={setAnnualRate}
+        onChange={(val) => {
+          setAnnualRate(val);
+          if (selectedBank && val !== selectedBank.rate) setSelectedBank(null);
+        }}
       />
 
       <div className="space-y-2">
